@@ -1,0 +1,16 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.dashboard-card h2 {
+  color: #1b5e20;
+  margin-top: 10px;
+}
