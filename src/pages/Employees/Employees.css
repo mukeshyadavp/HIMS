@@ -1,0 +1,115 @@
+.emp-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.emp-sum-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.emp-val { font-size: 20px; font-weight: 700; color: #1b5e20; }
+.emp-key { font-size: 12px; color: #666; }
+
+.emp-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.emp-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 14px;
+}
+
+.emp-hierarchy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emp-hierarchy-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 8px 10px;
+  background: #f4f7fa;
+  border-radius: 8px;
+}
+
+.emp-hierarchy-level {
+  font-size: 10px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  min-width: 60px;
+}
+
+.emp-hierarchy-role { flex: 1; color: #333; }
+
+.emp-hierarchy-count {
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 14px;
+  min-width: 30px;
+  text-align: right;
+}
+
+.emp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.emp-table th {
+  background: #f4f7fa;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.emp-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.emp-id { font-family: monospace; font-weight: 600; color: #1b5e20; }
+
+.emp-level {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.emp-status {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.emp-active { background: #e8f5e9; color: #2e7d32; }
+.emp-leave { background: #fff8e1; color: #f57f17; }
+.emp-inactive { background: #fce4ec; color: #c62828; }
+
+@media (max-width: 1100px) {
+  .emp-layout { grid-template-columns: 1fr; }
+  .emp-summary-row { grid-template-columns: repeat(2, 1fr); }
+}

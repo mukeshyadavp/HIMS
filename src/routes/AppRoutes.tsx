@@ -11,30 +11,26 @@ import Schemes from "../pages/Schemes/Schemes";
 import Employees from "../pages/Employees/Employees";
 import Reports from "../pages/Reports/Reports";
 import Settings from "../pages/Settings/Settings";
+import MarketInfo from "../pages/MarketInfo/MarketInfo";
+import Advisory from "../pages/Advisory/Advisory";
 
 const AppRoutes = () => {
   return (
     <Routes>
-
-      {/* Dashboard Layout Wrapper */}
       <Route path="/" element={<DashboardLayout />}>
-
-        {/* Default page */}
         <Route index element={<Dashboard />} />
-
-        {/* Child routes */}
         <Route path="farmers" element={<FarmerRegistry />} />
         <Route path="gis" element={<GISMonitoring />} />
         <Route path="crop-monitoring" element={<CropMonitoring />} />
         <Route path="pest-alerts" element={<PestAlertsPage />} />
         <Route path="soil-monitoring" element={<SoilMonitoring />} />
         <Route path="schemes" element={<Schemes />} />
+        <Route path="market" element={<MarketInfo />} />
+        <Route path="advisory" element={<Advisory />} />
         <Route path="employees" element={<Employees />} />
         <Route path="reports" element={<Reports />} />
         <Route path="settings" element={<Settings />} />
-
-      </Route>   {/* ✅ THIS WAS MISSING */}
-
+      </Route>
     </Routes>
   );
 };

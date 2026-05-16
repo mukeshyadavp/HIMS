@@ -1,0 +1,64 @@
+.cm-table-card { margin-bottom: 20px; }
+
+.cm-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 14px;
+}
+
+.cm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cm-table th {
+  background: #f4f7fa;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cm-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.ndvi-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ndvi-bar {
+  height: 8px;
+  background: #2e7d32;
+  border-radius: 4px;
+  max-width: 100px;
+  transition: width 0.3s;
+}
+
+.health-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.health-excellent { background: #e8f5e9; color: #1b5e20; }
+.health-good { background: #c8e6c9; color: #2e7d32; }
+.health-moderate { background: #fff8e1; color: #f57f17; }
+
+.cm-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .cm-charts-grid { grid-template-columns: 1fr; }
+}
