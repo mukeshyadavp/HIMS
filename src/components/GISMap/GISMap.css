@@ -1,0 +1,26 @@
+.gis-map-wrapper {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gis-map {
+  height: 480px;
+  width: 100%;
+  z-index: 1;
+}
+
+.gis-legend {
+  display: flex;
+  gap: 16px;
+  padding: 10px 14px;
+  background: white;
+  font-size: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.legend-good { color: #2e7d32; font-weight: 500; }
+.legend-alert { color: #c62828; font-weight: 500; }
+.legend-monitor { color: #f57c00; font-weight: 500; }
+.legend-zone { color: #1565c0; font-weight: 500; }

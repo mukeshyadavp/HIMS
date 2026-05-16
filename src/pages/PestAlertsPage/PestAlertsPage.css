@@ -1,0 +1,51 @@
+.pa-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pa-summary-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 4px solid transparent;
+}
+
+.pa-high { border-top-color: #c62828; }
+.pa-medium { border-top-color: #f57c00; }
+.pa-low { border-top-color: #2e7d32; }
+.pa-districts { border-top-color: #1565c0; }
+
+.pa-count {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.pa-cat {
+  font-size: 12px;
+  color: #666;
+}
+
+.pa-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+.pa-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 1100px) {
+  .pa-layout { grid-template-columns: 1fr; }
+  .pa-summary-row { grid-template-columns: repeat(2, 1fr); }
+}

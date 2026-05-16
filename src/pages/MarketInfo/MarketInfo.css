@@ -1,0 +1,56 @@
+.mi-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mi-sum-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.mi-alert { border-top: 4px solid #c62828; }
+
+.mi-val { font-size: 26px; font-weight: 700; color: #1b5e20; margin-bottom: 4px; }
+.mi-key { font-size: 12px; color: #666; }
+
+.mi-price-card { margin-bottom: 20px; }
+
+.mi-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 14px;
+}
+
+.mi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.mi-table th {
+  background: #f4f7fa;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mi-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.price-up { color: #2e7d32; font-weight: 700; }
+.price-down { color: #c62828; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .mi-summary-row { grid-template-columns: repeat(2, 1fr); }
+}

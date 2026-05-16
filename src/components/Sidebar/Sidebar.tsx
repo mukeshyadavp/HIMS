@@ -1,25 +1,37 @@
 import "./Sidebar.css";
 import { Link, useLocation } from "react-router-dom";
+import {
+  LayoutDashboard, Users, Map, Sprout, Bug, FlaskConical,
+  ClipboardList, UserCog, BarChart2, Settings, ShoppingCart, BookOpen
+} from "lucide-react";
+
+const menuItems = [
+  { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard size={17} /> },
+  { name: "Farmer Registry", path: "/dashboard/farmers", icon: <Users size={17} /> },
+  { name: "GIS Monitoring", path: "/dashboard/gis", icon: <Map size={17} /> },
+  { name: "Crop Monitoring", path: "/dashboard/crop-monitoring", icon: <Sprout size={17} /> },
+  { name: "Pest Alerts", path: "/dashboard/pest-alerts", icon: <Bug size={17} /> },
+  { name: "Soil Monitoring", path: "/dashboard/soil-monitoring", icon: <FlaskConical size={17} /> },
+  { name: "Schemes", path: "/dashboard/schemes", icon: <ClipboardList size={17} /> },
+  { name: "Market Info", path: "/dashboard/market", icon: <ShoppingCart size={17} /> },
+  { name: "Farm Advisory", path: "/dashboard/advisory", icon: <BookOpen size={17} /> },
+  { name: "Employees", path: "/dashboard/employees", icon: <UserCog size={17} /> },
+  { name: "Reports", path: "/dashboard/reports", icon: <BarChart2 size={17} /> },
+  { name: "Settings", path: "/dashboard/settings", icon: <Settings size={17} /> },
+];
 
 const Sidebar = () => {
   const location = useLocation();
 
-  const menuItems = [
-    { name: "Dashboard", path: "/dashboard" },
-    { name: "Farmer Registry", path: "/dashboard/farmers" },
-    { name: "GIS Monitoring", path: "/dashboard/gis" },
-    { name: "Crop Monitoring", path: "/dashboard/crop-monitoring" },
-    { name: "Pest Alerts", path: "/dashboard/pest-alerts" },
-    { name: "Soil Monitoring", path: "/dashboard/soil-monitoring" },
-    { name: "Schemes", path: "/dashboard/schemes" },
-    { name: "Employees", path: "/dashboard/employees" },
-    { name: "Reports", path: "/dashboard/reports" },
-    { name: "Settings", path: "/dashboard/settings" },
-  ];
-
   return (
     <div className="sidebar">
-      <h2 className="sidebar-title">HIMS Portal</h2>
+      <div className="sidebar-brand">
+        <div className="sidebar-logo">🌿</div>
+        <div>
+          <div className="sidebar-title">HIMS</div>
+          <div className="sidebar-subtitle">Horticulture Portal</div>
+        </div>
+      </div>
 
       <ul className="sidebar-menu">
         {menuItems.map((item) => (
@@ -27,7 +39,10 @@ const Sidebar = () => {
             key={item.path}
             className={location.pathname === item.path ? "active-menu" : ""}
           >
-            <Link to={item.path}>{item.name}</Link>
+            <Link to={item.path}>
+              <span className="sidebar-icon">{item.icon}</span>
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>
