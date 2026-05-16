@@ -1,11 +1,34 @@
 import "./Header.css";
 import logo from "../assets/logo.png";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [role, setRole] = useState("User");
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // route batti role update
+  useEffect(() => {
+    if (location.pathname === "/dashboard") {
+      setRole("Admin");
+    } else {
+      setRole("User");
+    }
+  }, [location.pathname]);
+
+  const handleRoleChange = () => {
+
+    if (role === "User") {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
+
+    setOpen(false);
+  };
 
   return (
     <div className="header">
@@ -13,7 +36,11 @@ const Header = () => {
       {/* LEFT */}
       <div className="header-left">
 
-        <img src={logo} className="logo" alt="AP Government Logo" />
+        <img
+          src={logo}
+          className="logo"
+          alt="AP Government Logo"
+        />
 
         <div>
           <h2 className="title">
@@ -32,24 +59,23 @@ const Header = () => {
 
         <div className="dropdown">
 
+          {/* CURRENT ROLE */}
           <button
             className="user-btn"
             onClick={() => setOpen(!open)}
           >
-            User ▾
+            {role} ▾
           </button>
 
+          {/* DROPDOWN */}
           {open && (
             <div className="dropdown-menu">
 
               <button
-               className="user-btnn"
-                onClick={() => {
-                  setOpen(false);
-                  navigate("/dashboard");
-                }}
+                className="user-btnn"
+                onClick={handleRoleChange}
               >
-                Admin
+                {role === "User" ? "Admin" : "User"}
               </button>
 
             </div>
