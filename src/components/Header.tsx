@@ -2,15 +2,19 @@ import "./Header.css";
 import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
 
-const Header = () => {
+type HeaderProps = {
+  onToggleSidebar?: () => void; // ✅ OPTIONAL FIX
+};
+
+const Header = ({ onToggleSidebar }: HeaderProps) => {
   const [open, setOpen] = useState(false);
   const [role, setRole] = useState("User");
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // route batti role update
   useEffect(() => {
     if (location.pathname === "/dashboard") {
       setRole("Admin");
@@ -20,12 +24,8 @@ const Header = () => {
   }, [location.pathname]);
 
   const handleRoleChange = () => {
-
-    if (role === "User") {
-      navigate("/dashboard");
-    } else {
-      navigate("/");
-    }
+    if (role === "User") navigate("/dashboard");
+    else navigate("/");
 
     setOpen(false);
   };
@@ -36,11 +36,15 @@ const Header = () => {
       {/* LEFT */}
       <div className="header-left">
 
-        <img
-          src={logo}
-          className="logo"
-          alt="AP Government Logo"
-        />
+        {/* Hamburger */}
+        <button
+          className="hamburger"
+          onClick={() => onToggleSidebar?.()}   // ✅ SAFE CALL
+        >
+          <Menu size={22} />
+        </button>
+
+        <img src={logo} className="logo" alt="AP Government Logo" />
 
         <div>
           <h2 className="title">
@@ -59,7 +63,6 @@ const Header = () => {
 
         <div className="dropdown">
 
-          {/* CURRENT ROLE */}
           <button
             className="user-btn"
             onClick={() => setOpen(!open)}
@@ -67,17 +70,11 @@ const Header = () => {
             {role} ▾
           </button>
 
-          {/* DROPDOWN */}
           {open && (
             <div className="dropdown-menu">
-
-              <button
-                className="user-btnn"
-                onClick={handleRoleChange}
-              >
+              <button className="user-btnn" onClick={handleRoleChange}>
                 {role === "User" ? "Admin" : "User"}
               </button>
-
             </div>
           )}
 

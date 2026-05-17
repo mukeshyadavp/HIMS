@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import StatsCards from "../../components/StatsCards/StatsCards";
 import WeatherCard from "../../components/WeatherCard/WeatherCard";
@@ -27,9 +27,10 @@ const monthlyRegistrations = [
 
 const Dashboard = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
-      <div className="page-content">
+    // <div className="page-layout">
+    //   <Sidebar />
+    //   <div className="page-content">
+    <div className="page-content">
         <Topbar title="Dashboard" />
         <StatsCards />
         <WeatherCard />
@@ -70,7 +71,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

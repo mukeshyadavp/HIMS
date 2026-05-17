@@ -7,17 +7,28 @@
 body {
   background: #f4f7fa;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.page-layout {
+/* MAIN LAYOUT */
+.layout {
+  min-height: 100vh;
+}
+
+/* HEADER + SIDEBAR + CONTENT */
+.body {
   display: flex;
 }
 
-.page-content {
+/* PAGE CONTENT */
+/* .page-content {
   flex: 1;
   padding: 20px;
-}
+  width: 100%;
+  overflow-x: hidden;
+} */
 
+/* COMMON CARDS */
 .page-header {
   background: white;
   padding: 20px;
@@ -29,4 +40,28 @@ body {
   background: white;
   padding: 20px;
   border-radius: 14px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .body {
+    display: block;
+  }
+
+  .page-content {
+    padding: 14px;
+    /* margin-top: 90px; fixed header spacing */
+  }
+
+  .page-header,
+  .page-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
 }

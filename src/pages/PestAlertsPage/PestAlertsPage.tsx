@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import PestAlerts from "../../components/PestAlerts/PestAlerts";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
@@ -15,8 +15,8 @@ const districtAlerts = [
 
 const PestAlertsPage = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Pest Alerts & Disease Forewarning" />
 
@@ -49,7 +49,7 @@ const PestAlertsPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

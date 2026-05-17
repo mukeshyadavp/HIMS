@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -41,8 +41,8 @@ const recentReports = [
 
 const Reports = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Reports & Analytics" />
 
@@ -121,7 +121,7 @@ const Reports = () => {
           </table>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

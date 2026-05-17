@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import GISMap from "../../components/GISMap/GISMap";
 import "./GISMonitoring.css";
@@ -13,9 +13,11 @@ const layerControls = [
 
 const GISMonitoring = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
-      <div className="page-content">
+    // <div className="page-layout">
+    //   <Sidebar />
+    //   <div className="page-content">
+
+    <div className="page-content">
         <Topbar title="GIS Monitoring" />
 
         <div className="gis-layout">
@@ -49,7 +51,7 @@ const GISMonitoring = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

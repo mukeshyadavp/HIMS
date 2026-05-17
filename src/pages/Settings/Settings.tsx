@@ -1,9 +1,9 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 
 const Settings = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
 
       <div className="page-content">
         <div className="page-header">
@@ -14,7 +14,7 @@ const Settings = () => {
           <p>Portal settings</p>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

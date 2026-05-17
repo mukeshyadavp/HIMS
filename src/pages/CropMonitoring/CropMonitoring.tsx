@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -38,8 +38,8 @@ const healthClass: Record<string, string> = {
 
 const CropMonitoring = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Crop Monitoring" />
 
@@ -101,7 +101,7 @@ const CropMonitoring = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

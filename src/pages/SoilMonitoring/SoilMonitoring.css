@@ -1,3 +1,24 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  background: #f5f7fa;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
 .sm-summary-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -11,9 +32,16 @@
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
 }
 
-.sm-alert-card { border-top: 4px solid #c62828; }
+.sm-summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.sm-alert-card {
+  border-top: 4px solid #c62828;
+}
 
 .sm-val {
   font-size: 26px;
@@ -27,7 +55,25 @@
   color: #666;
 }
 
-.sm-table-card { margin-bottom: 20px; }
+/* =========================
+   COMMON CARD
+========================= */
+
+.page-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   TABLE SECTION
+========================= */
+
+.sm-table-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
 
 .sm-section-title {
   font-size: 14px;
@@ -49,13 +95,27 @@
   font-weight: 600;
   color: #444;
   border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
 }
 
 .sm-table td {
   padding: 10px 14px;
   border-bottom: 1px solid #f0f0f0;
   color: #333;
+  white-space: nowrap;
 }
+
+.sm-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sm-table tr:hover td {
+  background: #f9fbf9;
+}
+
+/* =========================
+   BADGES
+========================= */
 
 .sq-badge {
   padding: 3px 10px;
@@ -64,10 +124,29 @@
   font-weight: 600;
 }
 
-.sq-excellent { background: #e8f5e9; color: #1b5e20; }
-.sq-good { background: #c8e6c9; color: #2e7d32; }
-.sq-moderate { background: #fff8e1; color: #f57f17; }
-.sq-poor { background: #fce4ec; color: #c62828; }
+.sq-excellent {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.sq-good {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.sq-moderate {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.sq-poor {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+/* =========================
+   CHARTS
+========================= */
 
 .sm-charts-grid {
   display: grid;
@@ -75,7 +154,110 @@
   gap: 20px;
 }
 
-@media (max-width: 900px) {
-  .sm-summary-row { grid-template-columns: repeat(2, 1fr); }
-  .sm-charts-grid { grid-template-columns: 1fr; }
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media (max-width: 1024px) {
+
+  .page-content {
+    padding: 14px;
+  }
+
+  .sm-summary-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sm-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media (max-width: 768px) {
+
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .page-content {
+    padding: 12px;
+  }
+
+  .sm-summary-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sm-summary-card {
+    padding: 16px;
+  }
+
+  .sm-val {
+    font-size: 22px;
+  }
+
+  .sm-key {
+    font-size: 11px;
+  }
+
+  .sm-section-title {
+    font-size: 13px;
+  }
+
+  /* TABLE SCROLL */
+  .sm-table-card {
+    overflow-x: auto;
+  }
+
+  .sm-table {
+    min-width: 700px;
+    font-size: 12px;
+  }
+
+  .sm-table th,
+  .sm-table td {
+    padding: 8px 10px;
+  }
+
+  /* CHARTS */
+  .sm-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .page-card {
+    padding: 14px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE DEVICES
+========================= */
+
+@media (max-width: 480px) {
+
+  .page-content {
+    padding: 10px;
+  }
+
+  .sm-summary-card {
+    border-radius: 12px;
+  }
+
+  .sm-val {
+    font-size: 20px;
+  }
+
+  .sm-table {
+    font-size: 11px;
+  }
+
+  .sq-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
 }

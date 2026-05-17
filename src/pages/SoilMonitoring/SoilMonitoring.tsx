@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Legend
@@ -29,8 +29,8 @@ const qualityClass: Record<string, string> = {
 
 const SoilMonitoring = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Soil Monitoring" />
 
@@ -105,7 +105,7 @@ const SoilMonitoring = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

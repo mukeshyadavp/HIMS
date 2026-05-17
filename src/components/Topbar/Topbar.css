@@ -68,3 +68,26 @@
   border-radius: 50%;
   border: 2px solid white;
 }
+@media (max-width: 768px)   {
+  .topbar{
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) 
+{
+  .topbar{
+    margin-top: 110px;
+  }
+}
+
+@media (max-width: 320px) 
+{
+  .topbar{
+    margin-top: 150px;
+  }
+
+  .topbar {
+width: 100%;
+}
+}

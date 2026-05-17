@@ -20,33 +20,46 @@ const menuItems = [
   { name: "Settings", path: "/dashboard/settings", icon: <Settings size={17} /> },
 ];
 
-const Sidebar = () => {
+type Props = {
+  open: boolean;
+  onClose: () => void;
+};
+
+const Sidebar = ({ open, onClose }: Props) => {
   const location = useLocation();
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-brand">
-        <div className="sidebar-logo">🌿</div>
-        <div>
-          <div className="sidebar-title">HIMS</div>
-          <div className="sidebar-subtitle">Horticulture Portal</div>
-        </div>
-      </div>
+    <>
+      {/* Overlay only in mobile */}
+      {open && <div className="sidebar-overlay" onClick={onClose}></div>}
 
-      <ul className="sidebar-menu">
-        {menuItems.map((item) => (
-          <li
-            key={item.path}
-            className={location.pathname === item.path ? "active-menu" : ""}
-          >
-            <Link to={item.path}>
-              <span className="sidebar-icon">{item.icon}</span>
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+      {/* SINGLE SIDEBAR */}
+      <aside className={`sidebar ${open ? "open-mobile" : ""}`}>
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">🌿</div>
+          <div>
+            <div className="sidebar-title">HIMS</div>
+            <div className="sidebar-subtitle">Horticulture Portal</div>
+          </div>
+        </div>
+
+        <ul className="sidebar-menu">
+          {menuItems.map((item) => (
+            <li
+              key={item.path}
+              className={location.pathname === item.path ? "active-menu" : ""}
+              onClick={onClose}
+            >
+              <Link to={item.path}>
+                <span className="sidebar-icon">{item.icon}</span>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+      </aside>
+    </>
   );
 };
 
