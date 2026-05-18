@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import FarmerTable from "../../components/FarmerTable/FarmerTable";
 import { Users, MapPin, Leaf, CheckCircle } from "lucide-react";
@@ -13,9 +13,11 @@ const summaryCards = [
 
 const FarmerRegistry = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
-      <div className="page-content">
+    // <div className="page-layout">
+    // //   <Sidebar />
+    // //   <div className="page-content">
+
+    <div className="page-content">
         <Topbar title="Farmer Registry" />
 
         <div className="fr-summary-grid">
@@ -38,7 +40,7 @@ const FarmerRegistry = () => {
           <FarmerTable />
         </div>
       </div>
-    </div>
+    
   );
 };
 

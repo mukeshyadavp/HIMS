@@ -1,3 +1,24 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  background: #f5f7fa;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
 .sch-summary-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -13,12 +34,18 @@
   align-items: center;
   gap: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
+}
+
+.sch-sum-card:hover {
+  transform: translateY(-2px);
 }
 
 .sch-sum-val {
   font-size: 20px;
   font-weight: 700;
   color: #1b5e20;
+  margin-bottom: 4px;
 }
 
 .sch-sum-key {
@@ -26,12 +53,32 @@
   color: #666;
 }
 
+/* =========================
+   COMMON CARD
+========================= */
+
+.page-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
 .sch-section-title {
   font-size: 14px;
   font-weight: 600;
   color: #1b5e20;
   margin-bottom: 14px;
 }
+
+/* =========================
+   TABLE
+========================= */
 
 .sch-table {
   width: 100%;
@@ -53,7 +100,20 @@
   padding: 11px 14px;
   border-bottom: 1px solid #f0f0f0;
   color: #333;
+  white-space: nowrap;
 }
+
+.sch-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sch-table tr:hover td {
+  background: #f9fbf9;
+}
+
+/* =========================
+   TABLE STYLES
+========================= */
 
 .sch-id {
   font-family: monospace;
@@ -77,10 +137,129 @@
   font-weight: 600;
 }
 
-.scheme-active { background: #e8f5e9; color: #2e7d32; }
-.scheme-ongoing { background: #e3f2fd; color: #1565c0; }
-.scheme-closed { background: #fce4ec; color: #c62828; }
+.scheme-active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
 
-@media (max-width: 900px) {
-  .sch-summary-row { grid-template-columns: repeat(2, 1fr); }
+.scheme-ongoing {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.scheme-closed {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media (max-width: 1024px) {
+
+  .page-content {
+    padding: 14px;
+  }
+
+  .sch-summary-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sch-sum-card {
+    padding: 16px;
+  }
+
+  .sch-sum-val {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media (max-width: 768px) {
+
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .page-content {
+    padding: 12px;
+  }
+
+  /* SUMMARY CARDS */
+  .sch-summary-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sch-sum-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .sch-sum-val {
+    font-size: 18px;
+  }
+
+  .sch-sum-key {
+    font-size: 11px;
+  }
+
+  /* SECTION */
+  .sch-section-title {
+    font-size: 13px;
+  }
+
+  /* TABLE SCROLL */
+  .page-card {
+    overflow-x: auto;
+    padding: 14px;
+  }
+
+  .sch-table {
+    min-width: 850px;
+    font-size: 12px;
+  }
+
+  .sch-table th,
+  .sch-table td {
+    padding: 8px 10px;
+  }
+
+  .sch-category,
+  .sch-status {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE DEVICES
+========================= */
+
+@media (max-width: 480px) {
+
+  .page-content {
+    padding: 10px;
+  }
+
+  .sch-sum-card {
+    gap: 10px;
+  }
+
+  .sch-sum-val {
+    font-size: 16px;
+  }
+
+  .sch-table {
+    font-size: 11px;
+  }
+
+  .sch-table th,
+  .sch-table td {
+    padding: 7px 8px;
+  }
 }

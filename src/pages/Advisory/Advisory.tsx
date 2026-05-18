@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import { BookOpen, Leaf, Cloud, FlaskConical, Bug, ChevronRight } from "lucide-react";
 import "./Advisory.css";
@@ -75,8 +75,8 @@ const categoryColors: Record<string, string> = {
 
 const Advisory = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Farm Advisory" />
 
@@ -116,7 +116,7 @@ const Advisory = () => {
           ))}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

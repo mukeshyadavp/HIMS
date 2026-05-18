@@ -1,21 +1,26 @@
 import Header from "../components/Header";
-// import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-// import "./DashboardLayout.css";
+import { useState } from "react";
 
 const DashboardLayout = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div className="layout">
 
-      {/* TOP HEADER */}
-      <Header />
+      {/* HEADER */}
+      <Header onToggleSidebar={() => setSidebarOpen(prev => !prev)} />
 
       <div className="body">
 
-        {/* LEFT SIDEBAR */}
-        {/* <Sidebar /> */}
+        {/* SIDEBAR (ALWAYS RENDERED) */}
+        <Sidebar
+          open={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
-        {/* PAGE CONTENT */}
+        {/* CONTENT */}
         <div className="content">
           <Outlet />
         </div>

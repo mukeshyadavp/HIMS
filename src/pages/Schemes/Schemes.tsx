@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import { CheckCircle, Clock, IndianRupee, FileText } from "lucide-react";
 import "./Schemes.css";
@@ -74,8 +74,8 @@ const statusClass: Record<string, string> = {
 
 const Schemes = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Government Schemes" />
 
@@ -118,7 +118,7 @@ const Schemes = () => {
           </table>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import { Users, Building2, UserCheck, ChevronRight } from "lucide-react";
 import "./Employees.css";
@@ -31,8 +31,8 @@ const statusClass: Record<string, string> = {
 
 const Employees = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Employee Management" />
 
@@ -87,7 +87,7 @@ const Employees = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

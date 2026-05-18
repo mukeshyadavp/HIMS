@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
@@ -32,8 +32,8 @@ const TrendIcon = ({ trend }: { trend: string }) => {
 
 const MarketInfo = () => {
   return (
-    <div className="page-layout">
-      <Sidebar />
+    // <div className="page-layout">
+    //   <Sidebar />
       <div className="page-content">
         <Topbar title="Market Information" />
 
@@ -88,7 +88,7 @@ const MarketInfo = () => {
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
